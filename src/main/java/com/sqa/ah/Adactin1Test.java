@@ -37,6 +37,11 @@ public class Adactin1Test {
 
 	@Test
 	public void selectLocation() {
+		this.driver.findElement(By.id("username")).clear();
+		this.driver.findElement(By.id("password")).clear();
+		this.driver.findElement(By.id("username")).sendKeys("annetest");
+		this.driver.findElement(By.id("password")).sendKeys("annepw");
+		this.driver.findElement(By.id("login")).click();
 		WebElement location = this.driver.findElement(By.id("location"));
 		Select selector = new Select(location);
 		selector.selectByVisibleText("Sydney");
