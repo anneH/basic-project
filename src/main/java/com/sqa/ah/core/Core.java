@@ -5,7 +5,10 @@
  */
 package com.sqa.ah.core;
 
+import org.apache.log4j.*;
 import org.openqa.selenium.*;
+
+import com.sqa.ah.helpers.*;
 
 /**
  * Core class for setting the baseurl and Webdriver.
@@ -21,6 +24,8 @@ public class Core {
 	protected WebDriver driver;
 
 	private BasicTest curTest;
+
+	private Logger log;
 
 	public Core(BasicTest test) {
 		this.curTest = test;
@@ -56,6 +61,10 @@ public class Core {
 		return this.driver;
 	}
 
+	public String getProp(String propName) {
+		return AutoBasics.getProp(propName, "src/main/resources/", "config.properties", getLog());
+	}
+
 	public boolean isElementPresent(By locator) {
 		return false;
 	}
@@ -74,5 +83,13 @@ public class Core {
 	 */
 	public void setDriver(WebDriver driver) {
 		this.driver = driver;
+	}
+
+	/**
+	 * @return
+	 */
+	private Logger getLog() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
