@@ -6,11 +6,7 @@
 package com.sqa.ah.helpers.enums;
 
 /**
- * DataType //ADDD (description of class)
- * <p>
- * //ADDD (description of core fields)
- * <p>
- * //ADDD (description of core methods)
+ * DataType enums
  *
  * @author Hesemann, Anne
  * @version 1.0.0

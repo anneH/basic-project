@@ -9,11 +9,8 @@ import org.openqa.selenium.firefox.*;
 import org.testng.annotations.*;
 
 /**
- * BasicTest //ADDD (description of class)
- * <p>
- * //ADDD (description of core fields)
- * <p>
- * //ADDD (description of core methods)
+ * This class contains methods to set up the driver before each class, get the
+ * url before each method, and quit the driver after the class.
  *
  * @author Hesemann, Anne
  * @version 1.0.0

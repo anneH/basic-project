@@ -5,7 +5,7 @@
  */
 package com.sqa.ah.core;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.support.*;
 
 /**
  * BasicPage
@@ -20,7 +20,8 @@ public class BasicPage extends Core {
 	 * @param baseurl
 	 * @param driver
 	 */
-	public BasicPage(String baseurl, WebDriver driver) {
-		super(baseurl, driver);
+	public BasicPage(BasicTest test) {
+		super(test);
+		PageFactory.initElements(getDriver(), this);
 	}
 }

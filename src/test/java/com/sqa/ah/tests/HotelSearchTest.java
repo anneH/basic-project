@@ -7,35 +7,35 @@ package com.sqa.ah.tests;
 
 import org.testng.annotations.*;
 
-import com.sqa.ah.core.*;
+import com.sqa.ah.adactin.*;
 import com.sqa.ah.pageObjects.*;
 
-/**
- * HotelSearchTest //ADDD (description of class)
- * <p>
- * //ADDD (description of core fields)
- * <p>
- * //ADDD (description of core methods)
- *
+/*
+ * This test tests the hotel search function
  * @author Hesemann, Anne
  * @version 1.0.0
  * @since 1.0
  */
-public class HotelSearchTest extends BasicTest {
+public class HotelSearchTest extends AdactinTest {
 
 	/**
 	 * @param baseurl
 	 */
 	public HotelSearchTest(String baseurl) {
-		super("http://adactin.com/HotelApp/index.php");
+		super();
 	}
 
+	/*
+	 * test of valid data location: Sydney; hotel: Hotel Creek; room type:
+	 * Standard; number of rooms: 1; check-in date: 9/17/207; check-out date:
+	 * 9/18/2017; adults per room: 1; children per room: no selection
+	 */
 	@Test
 	public void testHotelLocationSearch() {
-		LoginPage loginPg = new LoginPage(this.driver);
-		SearchHotelPage searchHotelPg = new SearchHotelPage(this.driver);
+		AdactinHomePage loginPg = new AdactinHomePage(this);
+		SearchHotelPage searchHotelPg = new SearchHotelPage(this);
 		loginPg.validLogin("annetest", "annepw");
-		searchHotelPg.searchHotels("Sydney", "Hotel Creek", "Standard", "1-One", "9/17/2017", "9/18/2017", "1-One",
-				"-Select Children per Room-");
+		searchHotelPg.searchHotels("Sydney", "Hotel Creek", "Standard", "1 - One", "9/17/2017", "9/18/2017", "1 - One",
+				"1 - One");
 	}
 }

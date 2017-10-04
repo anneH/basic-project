@@ -7,7 +7,7 @@ package com.sqa.ah.tests;
 import org.testng.*;
 import org.testng.annotations.*;
 
-import com.sqa.ah.core.*;
+import com.sqa.ah.adactin.*;
 import com.sqa.ah.pageObjects.*;
 
 /**
@@ -18,26 +18,27 @@ import com.sqa.ah.pageObjects.*;
  * @version 1.0.0
  * @since 1.0
  */
-public class LoginTest extends BasicTest {
+public class LoginTest extends AdactinTest {
 
 	/**
 	 * @param baseurl
 	 */
 	public LoginTest(String baseurl) {
-		super("http://adactin.com/HotelApp/index.php");
+		super();
 	}
 
+	// test of login with invalid credentials
 	@Test
 	public void testInvalidLogin() {
-		LoginPage loginPage = new LoginPage(this.driver);
+		AdactinHomePage loginPage = new AdactinHomePage(this);
 		loginPage.inValidLogin("annetest", " ");
 	}
 
+	// test of login with valid credentials
 	@Test
 	public void testValidLogin() throws InterruptedException {
-		LoginPage loginPage = new LoginPage(this.driver);
+		AdactinHomePage loginPage = new AdactinHomePage(this);
 		loginPage.validLogin("annetest", "annepw");
-		Thread.sleep(10000);
 		String pageTitle = this.driver.getTitle();
 		AssertJUnit.assertEquals(pageTitle, "AdactIn.com - Search Hotel");
 	}

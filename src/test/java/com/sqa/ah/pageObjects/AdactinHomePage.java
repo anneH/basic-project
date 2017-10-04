@@ -9,6 +9,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 import org.testng.*;
 
+import com.sqa.ah.core.*;
+
 /**
  * This class contains the methods and elements for the Adactin Hotel app login
  * page.
@@ -17,7 +19,7 @@ import org.testng.*;
  * @version 1.0.0
  * @since 1.0
  */
-public class LoginPage {
+public class AdactinHomePage extends BasicPage {
 
 	private WebElement username;
 
@@ -28,14 +30,8 @@ public class LoginPage {
 	@FindBy(css = ".auth_error>b")
 	private WebElement invalidLoginText;
 
-	private WebDriver driver;
-
-	/**
-	 * @param baseurl
-	 * @param driver
-	 */
-	public LoginPage(WebDriver driver) {
-		PageFactory.initElements(driver, this);
+	public AdactinHomePage(BasicTest test) {
+		super(test);
 	}
 
 	/**
@@ -65,10 +61,11 @@ public class LoginPage {
 		this.username.sendKeys(userN);
 		this.password.sendKeys(passW);
 		this.login.click();
-		AssertJUnit.assertEquals("Invalid Login Details", this.invalidLoginText.getText());
+		Assert.assertEquals("Invalid Login Details", this.invalidLoginText.getText());
 	}
 
 	public void validLogin(String userN, String passW) {
+		takeScreenshot();
 		this.username.clear();
 		this.password.clear();
 		this.username.sendKeys(userN);

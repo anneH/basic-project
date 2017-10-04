@@ -14,11 +14,8 @@ import org.apache.log4j.*;
 import org.openqa.selenium.*;
 
 /**
- * AutoBasics //ADDD (description of class)
- * <p>
- * //ADDD (description of core fields)
- * <p>
- * //ADDD (description of core methods)
+ * This class contains automation helper methods for working with web elements,
+ * taking a screenshot, and getting properties from the properties file.
  *
  * @author Hesemann, Anne
  * @version 1.0.0

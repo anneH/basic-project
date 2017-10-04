@@ -27,6 +27,8 @@ public class Core {
 
 	private Logger log;
 
+	private int count = 1;
+
 	public Core(BasicTest test) {
 		this.curTest = test;
 		this.baseurl = test.getBaseurl();
@@ -85,11 +87,19 @@ public class Core {
 		this.driver = driver;
 	}
 
+	public void takeScreenshot() {
+		AutoBasics.takeScreenshot("screenshots/", "AutoTest" + this.count, getDriver(), this.getLog());
+		this.count++;
+	}
+
+	public void takeScreenshot(String name) {
+		AutoBasics.takeScreenshot("screenshots/", name, getDriver(), this.getLog());
+	}
+
 	/**
 	 * @return
 	 */
 	private Logger getLog() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }

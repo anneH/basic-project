@@ -15,7 +15,7 @@ import com.sqa.ah.helpers.exceptions.*;
 /**
  * DataHelper Class to handle reading data from different sources.
  *
- * @author Anne Hesemann
+ * @author Hesemann, Anne
  * @version 1.0.0
  * @since 1.0
  */
