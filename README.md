@@ -1,6 +1,6 @@
 # Basic Project :+1:
 
-*Structure for creating a basic project*
+*Structure for creating a basic Selenium WebDriver project*
 
 **Java 8**
 
